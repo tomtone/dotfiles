@@ -16,8 +16,8 @@ fi
 
 # Erstellen eines Symlinks von der .gitconfig im dotfiles-Ordner ins Elternverzeichnis
 if [ -f "$DOTFILES_DIR/.gitconfig.sample" ]; then
-    mv "$DOTFILES_DIR/.gitconfig.sample" "$DOTFILES_DIR/.gitconfig"
-    ln -s "$DOTFILES_DIR/.gitconfig.sample" "$PARENT_DIR/.gitconfig"
+    cp "$DOTFILES_DIR/.gitconfig.sample" "$DOTFILES_DIR/.gitconfig"
+    ln -s "$DOTFILES_DIR/.gitconfig" "$PARENT_DIR/.gitconfig"
     echo "Ein Symlink für .gitconfig wurde im Elternverzeichnis erstellt."
 else
     echo ".gitconfig im dotfiles-Ordner nicht gefunden. Symlink wird nicht erstellt."
